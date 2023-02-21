@@ -1,8 +1,9 @@
 
 import { NativeModules } from 'react-native';
+import { IQRreader } from './index.d';
 
-const QRreader = (fileUrl)=>{
+const QRreader = (fileUrl: string):Promise<IQRreader> => {
   var QRScanReader = NativeModules.QRScanReader;
   return QRScanReader.readerQR(fileUrl);    
 }
-export {QRreader}
+export default QRreader
